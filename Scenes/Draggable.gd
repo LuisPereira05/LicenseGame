@@ -24,17 +24,9 @@ func _ready():
 	readingWindow.hide()
 	add_to_group("Draggable", true) # Añande el objeto al grupo Draggable para organización
 
-func _on_area_2d_mouse_entered(): # Llamada cuando el mouse ENTRA al area arriba del documento
+func _on_area_2d_mouse(): # Llamada cuando el mouse SALE/ENTRA al area del documento
 	if not global.isdragging: # Si no se está arrastrando algo...
-		draggable = true # Permite que el objeto que está debajo del mouse sea arrastrado
-
-func _on_area_2d_mouse_exited(): # Llamada cuando el mouse SALE al area arriba del documento
-	if not global.isdragging: # Si no se está arrastrando algo...
-		draggable = false # deja de arrastrar el objeto que está debajo del mouse
-
-func _on_area_2d_mouse(): # Llamada cuando el mouse SALE al area arriba del documento
-	if not global.isdragging: # Si no se está arrastrando algo...
-		draggable = !draggable # deja de arrastrar el objeto que está debajo del mouse
+		draggable = !draggable # (deja de) arrastrar el objeto que está debajo del mouse
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
