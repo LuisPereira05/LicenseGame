@@ -46,13 +46,12 @@ script = ExtResource("3_ypikg")
 shape = SubResource("RectangleShape2D_yqmor")
 
 [node name="TileMap" type="TileMapLayer" parent="."]
-visible = false
 scale = Vector2(1.5, 1.5)
 tile_map_data = PackedByteArray("AAD+//7/AAAAAAAAAAD///7/AAABAAAAAAAAAP7/AAACAAAAAAAAAP//AAACAAEAAAAAAAAAAAACAAEAAAAAAAEAAAACAAIAAAD//wEAAAABAAIAAAD+/wEAAAAAAAIAAAD+/wAAAAAAAAEAAAD+////AAAAAAEAAAD//wAAAAABAAEAAAD/////AAABAAEAAAA=")
 tile_set = SubResource("TileSet_xvq2g")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TileMap"]
-texture_filter = 1
+texture_filter = 5
 offset_left = -159.0
 offset_top = -185.0
 offset_right = 71.0

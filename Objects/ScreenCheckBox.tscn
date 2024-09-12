@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdp0fmvbjr2ny"]
+
+[ext_resource type="Script" path="res://Objects/screen_checkbox.gd" id="1_hhwcj"]
+
+[node name="Checkbox0" type="AnimatedSprite2D"]
+script = ExtResource("1_hhwcj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse"]
