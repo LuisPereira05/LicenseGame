@@ -1,4 +1,4 @@
-[gd_scene load_steps=192 format=3 uid="uid://cedtoq4cyhhok"]
+[gd_scene load_steps=176 format=3 uid="uid://cedtoq4cyhhok"]
 
 [ext_resource type="Texture2D" uid="uid://m0knuehinsli" path="res://Assets/ForegroundDemo1.png" id="1_hihse"]
 [ext_resource type="PackedScene" uid="uid://bstxgajkpgo0m" path="res://Objects/Character_Obj.tscn" id="1_id553"]
@@ -18,10 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://ds7gvwwrjcdga" path="res://Assets/Pantalla.png" id="13_k1y8o"]
 [ext_resource type="Texture2D" uid="uid://dunp2asu5cyuo" path="res://Assets/Buttons/ButtonNEXT.png" id="14_6f527"]
 [ext_resource type="Texture2D" uid="uid://brt8q2hso5m0s" path="res://Assets/TabInfraccion.png" id="15_a4iwt"]
-[ext_resource type="Texture2D" uid="uid://cugajwomgwi8k" path="res://Assets/Buttons/ButtonBACK.png" id="16_3i4tw"]
-[ext_resource type="PackedScene" uid="uid://bdp0fmvbjr2ny" path="res://Objects/ScreenCheckBox.tscn" id="18_6utxg"]
-[ext_resource type="Texture2D" uid="uid://1j5b3bbtcchq" path="res://Assets/InfTabContent.png" id="18_kv0kw"]
-[ext_resource type="Texture2D" uid="uid://dihd0v6f4hgb4" path="res://Assets/Buttons/CheckBox.png" id="19_wsu31"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_04mi8"]
 atlas = ExtResource("3_6xw7x")
@@ -1091,80 +1087,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5recu"]
 size = Vector2(36.3636, 17.0055)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ps400"]
-atlas = ExtResource("16_3i4tw")
-region = Rect2(0, 0, 37, 17)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t4p6d"]
-atlas = ExtResource("16_3i4tw")
-region = Rect2(37, 0, 37, 17)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kobnn"]
-atlas = ExtResource("16_3i4tw")
-region = Rect2(74, 0, 37, 17)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yb273"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ps400")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t4p6d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kobnn")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuh2u"]
-size = Vector2(37.1901, 17.3554)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cxw4e"]
-atlas = ExtResource("19_wsu31")
-region = Rect2(0, 0, 13, 13)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ihkj"]
-atlas = ExtResource("19_wsu31")
-region = Rect2(13, 0, 13, 13)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_swbid"]
-atlas = ExtResource("19_wsu31")
-region = Rect2(26, 0, 13, 13)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p8rj2"]
-atlas = ExtResource("19_wsu31")
-region = Rect2(39, 0, 13, 13)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_utgkd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cxw4e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5ihkj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_swbid")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p8rj2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kti6j"]
-size = Vector2(9.091, 9.09091)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sfwx"]
-size = Vector2(9.09113, 9.09091)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_sl27t"]
 atlas = ExtResource("4_ijqfi")
 region = Rect2(0, 0, 16, 16)
@@ -1225,7 +1147,6 @@ licTab = NodePath("LicTab")
 infTab = NodePath("InfTab")
 
 [node name="LicTab" type="Node2D" parent="Screen"]
-visible = false
 position = Vector2(32.275, 20.405)
 scale = Vector2(1.21, 1.21)
 
@@ -1306,6 +1227,7 @@ scale = Vector2(2.009, 2.009)
 texture = ExtResource("13_k1y8o")
 
 [node name="InfTab" type="Node2D" parent="Screen"]
+visible = false
 scale = Vector2(1.21, 1.21)
 
 [node name="ButtonNEXT" parent="Screen/InfTab" instance=ExtResource("5_4w7j8")]
@@ -1318,70 +1240,11 @@ tab_index = 2
 [node name="CollisionShape2D" parent="Screen/InfTab/ButtonNEXT/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_5recu")
 
-[node name="ButtonBACK" parent="Screen/InfTab" instance=ExtResource("5_4w7j8")]
-position = Vector2(-23.9669, 74.3802)
-sprite_frames = SubResource("SpriteFrames_yb273")
-action = "back"
-buttonName = "back"
-
-[node name="CollisionShape2D" parent="Screen/InfTab/ButtonBACK/Area2D" index="0"]
-shape = SubResource("RectangleShape2D_uuh2u")
-
 [node name="Inf" type="Sprite2D" parent="Screen/InfTab"]
 texture_filter = 1
 position = Vector2(11.82, -80.37)
 scale = Vector2(2.00931, 2.00931)
 texture = ExtResource("15_a4iwt")
-
-[node name="InfContent" type="Sprite2D" parent="Screen/InfTab"]
-texture_filter = 1
-position = Vector2(-5.63843, -9.17355)
-scale = Vector2(2.00931, 2.00931)
-texture = ExtResource("18_kv0kw")
-
-[node name="Checkbox0" parent="Screen/InfTab" instance=ExtResource("18_6utxg")]
-texture_filter = 1
-position = Vector2(132.231, -56.1983)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_utgkd")
-info = "att"
-
-[node name="CollisionShape2D" parent="Screen/InfTab/Checkbox0/Area2D" index="0"]
-position = Vector2(-0.826538, 2.06612)
-shape = SubResource("RectangleShape2D_kti6j")
-
-[node name="Checkbox1" parent="Screen/InfTab" instance=ExtResource("18_6utxg")]
-texture_filter = 1
-position = Vector2(132.231, -25.6198)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_utgkd")
-info = "sa"
-
-[node name="CollisionShape2D" parent="Screen/InfTab/Checkbox1/Area2D" index="0"]
-position = Vector2(-0.826569, 2.06612)
-shape = SubResource("RectangleShape2D_1sfwx")
-
-[node name="Checkbox2" parent="Screen/InfTab" instance=ExtResource("18_6utxg")]
-texture_filter = 1
-position = Vector2(132.231, 4.95868)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_utgkd")
-info = "nc"
-
-[node name="CollisionShape2D" parent="Screen/InfTab/Checkbox2/Area2D" index="0"]
-position = Vector2(-0.826538, 2.06612)
-shape = SubResource("RectangleShape2D_kti6j")
-
-[node name="Checkbox3" parent="Screen/InfTab" instance=ExtResource("18_6utxg")]
-texture_filter = 1
-position = Vector2(132.231, 34.7107)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_utgkd")
-info = "nd"
-
-[node name="CollisionShape2D" parent="Screen/InfTab/Checkbox3/Area2D" index="0"]
-position = Vector2(-0.826538, 2.06612)
-shape = SubResource("RectangleShape2D_kti6j")
 
 [node name="Node2D" type="Node2D" parent="Screen"]
 position = Vector2(-906, -335)
@@ -1401,11 +1264,6 @@ script = ExtResource("5_olf56")
 [connection signal="was_clicked" from="Screen/LicTab/ButtonBY-ND" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/LicTab/ButtonBY-NC-ND" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/InfTab/ButtonNEXT" to="Screen" method="_on_button_was_clicked"]
-[connection signal="was_clicked" from="Screen/InfTab/ButtonNEXT" to="Screen/InfTab/Checkbox0" method="_on_next"]
-[connection signal="was_clicked" from="Screen/InfTab/ButtonNEXT" to="Screen/InfTab/Checkbox1" method="_on_next"]
-[connection signal="was_clicked" from="Screen/InfTab/ButtonNEXT" to="Screen/InfTab/Checkbox2" method="_on_next"]
-[connection signal="was_clicked" from="Screen/InfTab/ButtonNEXT" to="Screen/InfTab/Checkbox3" method="_on_next"]
-[connection signal="was_clicked" from="Screen/InfTab/ButtonBACK" to="Screen" method="_on_button_was_clicked"]
 
 [editable path="Screen/LicTab/ButtonZERO"]
 [editable path="Screen/LicTab/ButtonBY"]
@@ -1415,8 +1273,3 @@ script = ExtResource("5_olf56")
 [editable path="Screen/LicTab/ButtonBY-ND"]
 [editable path="Screen/LicTab/ButtonBY-NC-ND"]
 [editable path="Screen/InfTab/ButtonNEXT"]
-[editable path="Screen/InfTab/ButtonBACK"]
-[editable path="Screen/InfTab/Checkbox0"]
-[editable path="Screen/InfTab/Checkbox1"]
-[editable path="Screen/InfTab/Checkbox2"]
-[editable path="Screen/InfTab/Checkbox3"]

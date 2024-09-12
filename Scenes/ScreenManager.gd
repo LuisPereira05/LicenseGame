@@ -16,30 +16,23 @@ func _process(_delta: float) -> void:
 	pass
 
 
+#func _on_button_was_clicked(action: String, buttonName : String) -> void:
+	#if action == "next":
+		#if buttonName != "next":
+			#global.sendInfo["license"] = buttonName
+		#curTab += 1
+		#to_tab(curTab)
+	#elif action == "back":
+		#curTab -= 1
+		#to_tab(curTab)
+	#print("license: ", global.sendInfo["license"], "\n")
 
-func _on_button_was_clicked(action: String, buttonName : String) -> void:
-	if action == "next":
-		if buttonName != "next":
-			global.sendInfo["license"] = buttonName
-		curTab += 1
-		to_tab(curTab)
-	elif action == "back":
-		curTab -= 1
-		to_tab(curTab)
-	print("license: ", global.sendInfo["license"], "\n")
-
-func to_tab(index : int):
-	for i in range(0, tabs.size()):
-		if i != index:
-			tabs[i].hide()
-		else:
-			tabs[i].show()
-
-func _on_button_was_clicked(_action: String, _buttonName : String, tab_index: int) -> void:
+func _on_button_was_clicked(_action: String, buttonName : String, tab_index: int) -> void:
 	global.current_tab = tab_index
 	tabs.map(func(tab): 
 			if tab == tabs[tab_index] : 
 				tab.show() 
 			else: 
 				tab.hide())
-
+	if buttonName != "next":
+		global.sendInfo["license"] = buttonName
