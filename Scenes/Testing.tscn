@@ -1,10 +1,11 @@
-[gd_scene load_steps=175 format=3 uid="uid://cedtoq4cyhhok"]
+[gd_scene load_steps=176 format=3 uid="uid://cedtoq4cyhhok"]
 
 [ext_resource type="Texture2D" uid="uid://m0knuehinsli" path="res://Assets/ForegroundDemo1.png" id="1_hihse"]
 [ext_resource type="PackedScene" uid="uid://bstxgajkpgo0m" path="res://Objects/Character_Obj.tscn" id="1_id553"]
 [ext_resource type="Texture2D" uid="uid://dj4mc5f5gydh" path="res://Assets/Fila.png" id="3_6xw7x"]
 [ext_resource type="PackedScene" uid="uid://cyo0o11vv6oyn" path="res://Objects/DraggableObject.tscn" id="3_faqed"]
 [ext_resource type="Texture2D" uid="uid://beqb6w31lom6t" path="res://Assets/Cursor.png" id="4_ijqfi"]
+[ext_resource type="Script" path="res://Scenes/ScreenManager.gd" id="5_2bwg0"]
 [ext_resource type="PackedScene" uid="uid://v3ekwsxt6ja2" path="res://Objects/ScreenButton.tscn" id="5_4w7j8"]
 [ext_resource type="Script" path="res://Scenes/Cursor.gd" id="5_olf56"]
 [ext_resource type="Texture2D" uid="uid://tog4olmkbv47" path="res://Assets/Buttons/ButtonZERO.png" id="6_tlwy6"]
@@ -1139,17 +1140,21 @@ position = Vector2(452, 454)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 
-[node name="Screen" type="Node2D" parent="."]
+[node name="Screen" type="Node2D" parent="." node_paths=PackedStringArray("licTab", "infTab")]
 position = Vector2(906, 335)
+script = ExtResource("5_2bwg0")
+licTab = NodePath("LicTab")
+infTab = NodePath("InfTab")
 
 [node name="LicTab" type="Node2D" parent="Screen"]
-visible = false
 position = Vector2(32.275, 20.405)
 scale = Vector2(1.21, 1.21)
 
 [node name="ButtonZERO" parent="Screen/LicTab" instance=ExtResource("5_4w7j8")]
 position = Vector2(-129, -49)
 sprite_frames = SubResource("SpriteFrames_ma8pk")
+action = "next"
+buttonName = "zero"
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonZERO/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_fj7qk")
@@ -1157,6 +1162,8 @@ shape = SubResource("RectangleShape2D_fj7qk")
 [node name="ButtonBY" parent="Screen/LicTab" instance=ExtResource("5_4w7j8")]
 position = Vector2(-65, -49)
 sprite_frames = SubResource("SpriteFrames_r0rtx")
+action = "next"
+buttonName = "by"
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonBY/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_cl5vi")
@@ -1164,6 +1171,8 @@ shape = SubResource("RectangleShape2D_cl5vi")
 [node name="ButtonBY-SA" parent="Screen/LicTab" instance=ExtResource("5_4w7j8")]
 position = Vector2(7, -49)
 sprite_frames = SubResource("SpriteFrames_0ifds")
+action = "next"
+buttonName = "bysa"
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonBY-SA/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_crp01")
@@ -1171,6 +1180,8 @@ shape = SubResource("RectangleShape2D_crp01")
 [node name="ButtonBY-NC" parent="Screen/LicTab" instance=ExtResource("5_4w7j8")]
 position = Vector2(87, -49)
 sprite_frames = SubResource("SpriteFrames_lkhg5")
+action = "next"
+buttonName = "bync"
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonBY-NC/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_crp01")
@@ -1178,6 +1189,8 @@ shape = SubResource("RectangleShape2D_crp01")
 [node name="ButtonBY-NC-SA" parent="Screen/LicTab" instance=ExtResource("5_4w7j8")]
 position = Vector2(-108, 25)
 sprite_frames = SubResource("SpriteFrames_1axwj")
+action = "next"
+buttonName = "byncsa"
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonBY-NC-SA/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_k2uyp")
@@ -1185,6 +1198,8 @@ shape = SubResource("RectangleShape2D_k2uyp")
 [node name="ButtonBY-ND" parent="Screen/LicTab" instance=ExtResource("5_4w7j8")]
 position = Vector2(-15, 25)
 sprite_frames = SubResource("SpriteFrames_fh61g")
+action = "next"
+buttonName = "bynd"
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonBY-ND/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_crp01")
@@ -1192,6 +1207,8 @@ shape = SubResource("RectangleShape2D_crp01")
 [node name="ButtonBY-NC-ND" parent="Screen/LicTab" instance=ExtResource("5_4w7j8")]
 position = Vector2(78, 25)
 sprite_frames = SubResource("SpriteFrames_pl7w2")
+action = "next"
+buttonName = "byncnd"
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonBY-NC-ND/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_k2uyp")
@@ -1203,13 +1220,16 @@ scale = Vector2(2.009, 2.009)
 texture = ExtResource("13_k1y8o")
 
 [node name="InfTab" type="Node2D" parent="Screen"]
+visible = false
 scale = Vector2(1.21, 1.21)
 
-[node name="ButtonZERO" parent="Screen/InfTab" instance=ExtResource("5_4w7j8")]
+[node name="ButtonNEXT" parent="Screen/InfTab" instance=ExtResource("5_4w7j8")]
 position = Vector2(81.8182, 74.0303)
 sprite_frames = SubResource("SpriteFrames_aktuu")
+action = "next"
+buttonName = "next"
 
-[node name="CollisionShape2D" parent="Screen/InfTab/ButtonZERO/Area2D" index="0"]
+[node name="CollisionShape2D" parent="Screen/InfTab/ButtonNEXT/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_5recu")
 
 [node name="Inf" type="Sprite2D" parent="Screen/InfTab"]
@@ -1218,12 +1238,24 @@ position = Vector2(11.82, -80.37)
 scale = Vector2(2.00931, 2.00931)
 texture = ExtResource("15_a4iwt")
 
+[node name="Node2D" type="Node2D" parent="Screen"]
+position = Vector2(-906, -335)
+
 [node name="Cursor" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(573, 324)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_q773g")
 script = ExtResource("5_olf56")
+
+[connection signal="was_clicked" from="Screen/LicTab/ButtonZERO" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/LicTab/ButtonBY" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-SA" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-NC" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-NC-SA" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-ND" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-NC-ND" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/InfTab/ButtonNEXT" to="Screen" method="_on_button_was_clicked"]
 
 [editable path="Screen/LicTab/ButtonZERO"]
 [editable path="Screen/LicTab/ButtonBY"]
@@ -1232,4 +1264,4 @@ script = ExtResource("5_olf56")
 [editable path="Screen/LicTab/ButtonBY-NC-SA"]
 [editable path="Screen/LicTab/ButtonBY-ND"]
 [editable path="Screen/LicTab/ButtonBY-NC-ND"]
-[editable path="Screen/InfTab/ButtonZERO"]
+[editable path="Screen/InfTab/ButtonNEXT"]
