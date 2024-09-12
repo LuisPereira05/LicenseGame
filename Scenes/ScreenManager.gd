@@ -10,6 +10,7 @@ func _ready() -> void:
 	tabs = Array(get_children(false))
 	print("size: ", tabs.size())
 	curTab = 0
+	to_tab(curTab)
 	pass # Replace with function body.
 
 
@@ -23,10 +24,13 @@ func _on_button_was_clicked(action: String, buttonName : String) -> void:
 		if buttonName != "next":
 			global.sendInfo["license"] = buttonName
 		curTab += 1
-		to_inf_tab(curTab)
+		to_tab(curTab)
+	elif action == "back":
+		curTab -= 1
+		to_tab(curTab)
 	print(global.sendInfo["license"])
 
-func to_inf_tab(index : int):
+func to_tab(index : int):
 	for i in range(0, tabs.size()):
 		if i != index:
 			tabs[i].hide()

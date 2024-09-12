@@ -1,4 +1,4 @@
 extends Node
 
 var isdragging = false
-var sendInfo = {}
+var sendInfo = {"license" : null}
