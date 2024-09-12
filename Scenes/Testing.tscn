@@ -1234,6 +1234,7 @@ position = Vector2(-129, -49)
 sprite_frames = SubResource("SpriteFrames_ma8pk")
 action = "next"
 buttonName = "zero"
+tab_index = 1
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonZERO/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_fj7qk")
@@ -1243,6 +1244,7 @@ position = Vector2(-65, -49)
 sprite_frames = SubResource("SpriteFrames_r0rtx")
 action = "next"
 buttonName = "by"
+tab_index = 1
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonBY/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_cl5vi")
@@ -1252,6 +1254,7 @@ position = Vector2(7, -49)
 sprite_frames = SubResource("SpriteFrames_0ifds")
 action = "next"
 buttonName = "bysa"
+tab_index = 1
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonBY-SA/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_crp01")
@@ -1261,6 +1264,7 @@ position = Vector2(87, -49)
 sprite_frames = SubResource("SpriteFrames_lkhg5")
 action = "next"
 buttonName = "bync"
+tab_index = 1
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonBY-NC/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_crp01")
@@ -1270,6 +1274,7 @@ position = Vector2(-108, 25)
 sprite_frames = SubResource("SpriteFrames_1axwj")
 action = "next"
 buttonName = "byncsa"
+tab_index = 1
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonBY-NC-SA/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_k2uyp")
@@ -1279,6 +1284,7 @@ position = Vector2(-15, 25)
 sprite_frames = SubResource("SpriteFrames_fh61g")
 action = "next"
 buttonName = "bynd"
+tab_index = 1
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonBY-ND/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_crp01")
@@ -1288,6 +1294,7 @@ position = Vector2(78, 25)
 sprite_frames = SubResource("SpriteFrames_pl7w2")
 action = "next"
 buttonName = "byncnd"
+tab_index = 1
 
 [node name="CollisionShape2D" parent="Screen/LicTab/ButtonBY-NC-ND/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_k2uyp")
@@ -1306,6 +1313,7 @@ position = Vector2(81.8182, 74.0303)
 sprite_frames = SubResource("SpriteFrames_aktuu")
 action = "next"
 buttonName = "next"
+tab_index = 2
 
 [node name="CollisionShape2D" parent="Screen/InfTab/ButtonNEXT/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_5recu")
