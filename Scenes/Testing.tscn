@@ -1,4 +1,4 @@
-[gd_scene load_steps=273 format=3 uid="uid://cedtoq4cyhhok"]
+[gd_scene load_steps=274 format=3 uid="uid://cedtoq4cyhhok"]
 
 [ext_resource type="Texture2D" uid="uid://m0knuehinsli" path="res://Assets/ForegroundDemo1.png" id="1_hihse"]
 [ext_resource type="PackedScene" uid="uid://bstxgajkpgo0m" path="res://Objects/Character_Obj.tscn" id="1_id553"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bx763m61qm1he" path="res://Assets/ClockBG.png" id="5_4rg7t"]
 [ext_resource type="PackedScene" uid="uid://v3ekwsxt6ja2" path="res://Objects/ScreenButton.tscn" id="5_4w7j8"]
 [ext_resource type="Script" path="res://Scenes/Cursor.gd" id="5_olf56"]
+[ext_resource type="Script" path="res://Scenes/ClockManager.gd" id="5_thxqi"]
 [ext_resource type="Texture2D" uid="uid://cuogqgje7vbeb" path="res://Assets/ClockMIN.png" id="6_g1dtx"]
 [ext_resource type="Texture2D" uid="uid://tog4olmkbv47" path="res://Assets/Buttons/ButtonZERO.png" id="6_tlwy6"]
 [ext_resource type="Texture2D" uid="uid://bj8o5jtjlo5wd" path="res://Assets/ClockHOUR.png" id="7_27n3i"]
@@ -1109,7 +1110,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 3.0
+"speed": 1.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ad04f"]
@@ -1728,10 +1729,13 @@ autoplay = "default"
 frame = 94
 frame_progress = 0.709218
 
-[node name="Clock" type="Node2D" parent="CanvasGroup"]
+[node name="Clock" type="Node2D" parent="CanvasGroup" node_paths=PackedStringArray("minuteHandle", "hourHandle")]
 texture_filter = 1
 position = Vector2(1056, 96.02)
 scale = Vector2(2, 2)
+script = ExtResource("5_thxqi")
+minuteHandle = NodePath("Minutes")
+hourHandle = NodePath("Hours")
 
 [node name="BG" type="Sprite2D" parent="CanvasGroup/Clock"]
 texture_filter = 1
@@ -1739,6 +1743,8 @@ texture = ExtResource("5_4rg7t")
 
 [node name="Minutes" type="AnimatedSprite2D" parent="CanvasGroup/Clock"]
 sprite_frames = SubResource("SpriteFrames_tsp3o")
+frame = 5
+frame_progress = 0.905549
 
 [node name="Hours" type="AnimatedSprite2D" parent="CanvasGroup/Clock"]
 sprite_frames = SubResource("SpriteFrames_52wcp")
@@ -1950,6 +1956,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_q773g")
 script = ExtResource("5_olf56")
 
+[connection signal="timeout" from="CanvasGroup/Clock/Timer" to="CanvasGroup/Clock" method="_on_timer_timeout"]
 [connection signal="was_clicked" from="Screen/LicTab/ButtonZERO" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/LicTab/ButtonBY" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/LicTab/ButtonBY-SA" to="Screen" method="_on_button_was_clicked"]
