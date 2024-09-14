@@ -22,7 +22,7 @@ func _input(_event: InputEvent) -> void:
 		self.frame = 3 if checked else 1
 
 
-func _on_next(action: String, tab_index : int) -> void:
+func _on_next(_action: String, _tab_index : int) -> void:
 	global.sendInfo[info] = checked
 	print(info, ": ", global.sendInfo[info])
 
