@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_sentence(buttonName: String, tab_index: int) -> void:
+func _on_sentence(_buttonName: String, _tab_index: int) -> void:
 	queue.play()
 	next_char()
 	pass # Replace with function body.

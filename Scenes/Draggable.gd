@@ -13,14 +13,20 @@ func _ready() -> void:
 	draggable = false
 
 	# TODO HACER UN SISTEMA PARA ALMACENAR EN CADA DOCUMENTO SI ES PARA APROBAR O NO
-
-	# Añade el texto al Pop-up
-	textArea.append_text(sourceArray[randi_range(0, 5)] + "\n")
-	textArea.append_text(sourceArray[randi_range(6, 11)])
+	
+	change_text_pop_up()
 	
 	# Esconde el Pop-up
 	readingWindow.hide()
 	add_to_group("Draggable", true) # Añande el objeto al grupo Draggable para organización
+
+
+func change_text_pop_up() -> void:
+	textArea.clear()
+	
+	# Añade el texto al Pop-up
+	textArea.append_text(sourceArray[randi_range(0, 5)] + "\n")
+	textArea.append_text(sourceArray[randi_range(6, 11)])
 
 
 func _on_area_2d_mouse_entered() -> void: # Llamada cuando el mouse ENTRA al area del documento
@@ -61,3 +67,7 @@ func _input(_evt: InputEvent) -> void:
 	
 	elif Input.is_action_just_released("rClick"):
 		readingWindow.hide()
+
+
+func _on_app_or_napp(_buttonName: String, _tab_index: int) -> void:
+	change_text_pop_up()
