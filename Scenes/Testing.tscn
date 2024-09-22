@@ -1346,7 +1346,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iymej")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
 "speed": 1.0
 }]
@@ -1813,7 +1813,6 @@ texture = ExtResource("5_4rg7t")
 
 [node name="Minutes" type="AnimatedSprite2D" parent="CanvasGroup/Clock"]
 sprite_frames = SubResource("SpriteFrames_tsp3o")
-autoplay = "default"
 
 [node name="Hours" type="AnimatedSprite2D" parent="CanvasGroup/Clock"]
 position = Vector2(1, 0)
