@@ -30,4 +30,3 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		_new_char.emit()
 		anim.current_animation = anim.get_animation_list()[1]
 		anim.play()
-	pass # Replace with function body.

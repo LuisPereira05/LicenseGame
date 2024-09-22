@@ -1,40 +1,60 @@
 	# NOTA TIENE EN PARENTESIS A QUE CORRESPONDE PARA DEBUGAR
 
-@export var docs = [
+@export var statements = [
 	{
-		"text" : "(all)The creator of this work has requested [] compliance, which requires proper attribution for any usage."
+		"text" : "The creator of this work has requested its license's compliance, which requires proper attribution for any usage."
+		, "license" : "all"
 	},
 	{
-		"text" :"(SA)This work is protected under a license that mandates all derivative works to be shared alike. Any adaptation must adhere to this condition."
+		"text" :"This work is protected under a license that mandates all derivative works to be shared alike. Any adaptation must adhere to this condition."
+		, "license" : "sa"
 	},
 	{
-		"text" :"(ND)You are permitted to use this work as long as it remains unaltered and attributed correctly. Any modifications are not allowed.",
+		"text" :"You are permitted to use this work as long as it remains unaltered and attributed correctly. Any modifications are not allowed."
+		, "license" : "nd"
 	},
 	{
-		"text" :"(NC)Usage of this content is limited to non-commercial purposes only. Ensure that any adaptations are not used for commercial gain.",
+		"text" :"Usage of this content is limited to non-commercial purposes only. Ensure that any adaptations are not used for commercial gain.",
+		"license" : "nc"
 	},
 	{
-		"text" :"(BYNC)To comply with this license, you must provide attribution and ensure that the work is not used for commercial purposes or modified.",
+		"text" :"To comply with this license, you must provide attribution and ensure that the work is not used for commercial purposes or modified.",
+		"license" : "bync"
 	},
 	{
-		"text" :"(BYND)This work may be used and shared as long as it's not altered and proper credit is given to the creator. Commercial use is prohibited.",
+		"text" :"This work may be used and shared as long as it's not altered and proper credit is given to the creator. Commercial use is prohibited.",
+		"license" : "bynd"
 	},
 	{
-		"text" :"(BY)An individual used the content in a promotional video without proper attribution. The original creator has filed a lawsuit for failing to credit them as required by the license.",
+		"text" :"An individual used the content in a promotional video without proper attribution. The original creator has filed a lawsuit for failing to credit them as required by the license.",
+		"license" : "by"
+	},
+]
+
+@export var sue = [
+	{
+		"text" :"A company adapted the content and sold it as part of a new product, ignoring the requirement to share derivative works under the same conditions. Legal action is being taken for non-compliance.",
+		"license" : "sanc",
+		"att" : false, "sa" : true, "nc" : true, "nd" : false
 	},
 	{
-		"text" :"(SANC)A company adapted the content and sold it as part of a new product, ignoring the requirement to share derivative works under the same conditions. Legal action is being taken for non-compliance.",
+		"text" :"The work was published on a commercial website after being altered. The creator is pursuing legal action for breaching the no-derivative and non-commercial terms of the license.",
+		"license" : "ndnc",
+		"att" : false, "sa" : false, "nc" : true, "nd" : true
 	},
 	{
-		"text" :"(NDNC)The work was published on a commercial website after being altered. The creator is pursuing legal action for breaching the no-derivative and non-commercial terms of the license.",
+		"text" :"A non-profit organization used the content in a fundraising campaign, modifying it and failing to share the new version under the same license. The creator is suing for the misuse of the license terms.",
+		"license" : "sand",
+		"att" : false, "sa" : true, "nc" : false, "nd" : true
 	},
 	{
-		"text" :"(SAND)A non-profit organization used the content in a fundraising campaign, modifying it and failing to share the new version under the same license. The creator is suing for the misuse of the license terms.",
+		"text" :"A blog post included an edited version of the licensed content without permission for commercial purposes. The original creator is seeking damages for unauthorized use and modifications.",
+		"license" : "ndnc",
+		"att" : false, "sa" : false, "nc" : true, "nd" : true
 	},
 	{
-		"text" :"(NDNC)A blog post included an edited version of the licensed content without permission for commercial purposes. The original creator is seeking damages for unauthorized use and modifications.",
-	},
-	{
-		"text" :"(NC)The content was used in an advertisement, violating the license's non-commercial clause. The creator is filing a lawsuit for unauthorized commercial exploitation."
+		"text" :"The content was used in an advertisement, violating the license's non-commercial clause. The creator is filing a lawsuit for unauthorized commercial exploitation.",
+		"license" : "nc",
+		"att" : false, "sa" : false, "nc" : true, "nd" : false
 	},
 ]
