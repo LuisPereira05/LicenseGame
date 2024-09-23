@@ -7,8 +7,11 @@ var offset : Vector2
 
 var docs = preload("res://Prompts/Documents.gd").new()
 
-var sues = docs.sue
-var statements = docs.statements
+var sues : Array = docs.sue.map(func (doc) -> Dictionary : return {
+	"text" : doc["text"],
+	"license" : doc["license"],
+})
+var statements : Array = docs.statements
 
 
 # correct_responses / Infractions
