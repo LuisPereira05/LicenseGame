@@ -1346,7 +1346,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iymej")
 }],
-"loop": false,
+"loop": true,
 "name": &"default",
 "speed": 1.0
 }]
@@ -1813,7 +1813,6 @@ texture = ExtResource("5_4rg7t")
 
 [node name="Minutes" type="AnimatedSprite2D" parent="CanvasGroup/Clock"]
 sprite_frames = SubResource("SpriteFrames_tsp3o")
-autoplay = "default"
 
 [node name="Hours" type="AnimatedSprite2D" parent="CanvasGroup/Clock"]
 position = Vector2(1, 0)
@@ -2028,20 +2027,20 @@ script = ExtResource("5_olf56")
 [connection signal="animation_finished" from="CanvasGroup/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="frame_changed" from="CanvasGroup/Clock/Minutes" to="CanvasGroup/Clock" method="_on_minutes_frame_changed"]
 [connection signal="timeout" from="CanvasGroup/Clock/Timer" to="CanvasGroup/Clock" method="_on_timer_timeout"]
-[connection signal="was_clicked" from="Screen/LicTab/ButtonZERO" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/LicTab/ButtonZERO" to="Screen" method="send_license"]
-[connection signal="was_clicked" from="Screen/LicTab/ButtonBY" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/LicTab/ButtonZERO" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/LicTab/ButtonBY" to="Screen" method="send_license"]
-[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-SA" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/LicTab/ButtonBY" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/LicTab/ButtonBY-SA" to="Screen" method="send_license"]
-[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-NC" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-SA" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/LicTab/ButtonBY-NC" to="Screen" method="send_license"]
-[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-NC-SA" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-NC" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/LicTab/ButtonBY-NC-SA" to="Screen" method="send_license"]
-[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-ND" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-NC-SA" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/LicTab/ButtonBY-ND" to="Screen" method="send_license"]
-[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-NC-ND" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-ND" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/LicTab/ButtonBY-NC-ND" to="Screen" method="send_license"]
+[connection signal="was_clicked" from="Screen/LicTab/ButtonBY-NC-ND" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/InfTab/ButtonNEXT" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/InfTab/ButtonNEXT" to="Screen/InfTab/Checkbox0" method="_on_next"]
 [connection signal="was_clicked" from="Screen/InfTab/ButtonNEXT" to="Screen/InfTab/Checkbox1" method="_on_next"]
@@ -2050,12 +2049,12 @@ script = ExtResource("5_olf56")
 [connection signal="was_clicked" from="Screen/InfTab/ButtonBACK" to="Screen" method="_on_button_was_clicked"]
 [connection signal="was_clicked" from="Screen/FinTab/ButtonNAPP" to="." method="_on_sentence"]
 [connection signal="was_clicked" from="Screen/FinTab/ButtonNAPP" to="Object" method="_on_app_or_napp"]
-[connection signal="was_clicked" from="Screen/FinTab/ButtonNAPP" to="Screen" method="is_approved"]
 [connection signal="was_clicked" from="Screen/FinTab/ButtonNAPP" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/FinTab/ButtonNAPP" to="Screen" method="is_approved"]
 [connection signal="was_clicked" from="Screen/FinTab/ButtonAPP" to="." method="_on_sentence"]
 [connection signal="was_clicked" from="Screen/FinTab/ButtonAPP" to="Object" method="_on_app_or_napp"]
-[connection signal="was_clicked" from="Screen/FinTab/ButtonAPP" to="Screen" method="is_approved"]
 [connection signal="was_clicked" from="Screen/FinTab/ButtonAPP" to="Screen" method="_on_button_was_clicked"]
+[connection signal="was_clicked" from="Screen/FinTab/ButtonAPP" to="Screen" method="is_approved"]
 
 [editable path="Screen/LicTab/ButtonZERO"]
 [editable path="Screen/LicTab/ButtonBY"]
