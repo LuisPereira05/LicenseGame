@@ -94,6 +94,6 @@ func _reset_clock() -> void:
 		timeUp.emit()
 		print(global.tickSpeed)
 		#global.tickSpeed = global.tickSpeed / 2
-		_ready()
+		self._ready()
 	# Optionally restart the timer if needed, or handle game-over logic
 	timer.start()
