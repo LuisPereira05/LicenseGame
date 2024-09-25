@@ -35,6 +35,17 @@ func validate_player_responses():
 	print(generate_results())
 
 
+func _game_over(_btn_name, _i):
+	if global.user_responses:
+		global.health -= int((
+			global.user_responses[global.user_responses.size()-1]["app"] != 
+			global.correct_responses[global.user_responses.size()-1]["app"]
+		))
+
+		if 0 >= global.health:
+			print("\n\n\n\ngame_over\n\n")
+
+
 func generate_results() -> Dictionary:
 		var results : Dictionary = {"rounds" : [], "total_errors" : 0, "total_oks" : 0}
 
