@@ -8,6 +8,7 @@ var time : int = 36  # Initialize the time to 36 (or any value you need)
 var timeIsUp = false
 signal timeUp() 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Check if the nodes were successfully assigned by the editor
@@ -27,12 +28,13 @@ func _ready() -> void:
 	# Start and configure the timer
 	if timer != null:
 		timer.start()  # Start the timer
-		timer.wait_time = 1  # Each second represents a minute in the game
+		timer.wait_time = global.tickSpeed  # Each second represents a minute in the game
 		timer.one_shot = false  # Ensure the timer repeats
-		timer.connect("timeout", Callable(self, "_on_timer_timeout"))  # Connect to the timeout signal
+
 
 # Called when the timer times out (every second or set time).
 func _on_timer_timeout() -> void:
+	
 	_update_minute_hand()
 
 	# Check if the game should end or reset
@@ -41,6 +43,7 @@ func _on_timer_timeout() -> void:
 
 # Function to update the minute hand's frame and check for hour updates
 func _update_minute_hand() -> void:
+	
 	if minuteHandle != null and !timeIsUp:
 		minuteHandle.frame += 1
 	
@@ -75,7 +78,7 @@ func _update_hour_hand() -> void:
 # Function to reset the clock or trigger game-over logic
 func _reset_clock() -> void:
 	# Reset time to 36 or trigger an event like restarting the game
-	print("Time is up, resetting the clock or triggering end game!")
+	
 	
 	# Reset the time back to 36 (or any value you want to restart with)
 	time = 36
@@ -83,10 +86,14 @@ func _reset_clock() -> void:
 	# Reset the clock hands
 	if minuteHandle != null:
 		minuteHandle.frame = 0
-	if hourHandle != null and hourHandle.frame == 24:
+	if hourHandle != null and hourHandle.frame == 3:
 		hourHandle.frame = 0
-		timeIsUp = true
+		#timeIsUp = true
+		print("Time is up, resetting the clock or triggering end game!")
+		
 		timeUp.emit()
-	
+		print(global.tickSpeed)
+		#global.tickSpeed = global.tickSpeed / 2
+		_ready()
 	# Optionally restart the timer if needed, or handle game-over logic
 	timer.start()
