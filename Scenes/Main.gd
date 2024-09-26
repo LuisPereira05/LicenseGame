@@ -2,6 +2,8 @@ extends Node2D
 
 @export var queue : AnimatedSprite2D
 @export var anim : AnimationPlayer
+@export var fore : AnimatedSprite2D
+@export var music : AudioStreamPlayer2D
 
 signal _new_char()
 
@@ -39,8 +41,16 @@ func _game_over(_btn_name, _i):
 		# Calculate if the last response was correct or not
 		var last_response_incorrect = global.user_responses[global.user_responses.size() - 1]["app"] != global.correct_responses[global.user_responses.size() - 1]["app"]
 
+
 		# Decrease health if the last response was incorrect
 		global.health -= int(last_response_incorrect)
+
+	if global.health <= 0:
+		print("\n\n\n\ngame_over\n\n")
+		fore.animation = "GameOver"
+		fore.play_backwards()
+	
+
 
 		# Adjust the score
 		if last_response_incorrect:
