@@ -24,6 +24,25 @@ func next_char():
 	anim.current_animation = anim.get_animation_list()[2]
 	anim.play()
 
+	# Check if the user's response was incorrect
+	if global.user_responses:
+		var last_response_incorrect = global.user_responses[global.user_responses.size() - 1]["app"] != global.correct_responses[global.user_responses.size() - 1]["app"]
+
+		# Decrease health if the last response was incorrect
+		if last_response_incorrect:
+			global.health -= 1  # Reduce health by 1 for incorrect answer
+			decrease_score(5)  # Deduct points for incorrect response
+			print("Incorrect! Health is now:", global.health)
+		else:
+			increase_score(10)  # Award points for correct response
+			print("Correct! Health is:", global.health)
+
+		# Check if health is 0 to trigger game over
+		if global.health <= 0:
+			_game_over(false)
+		else:
+			print("Current Score: ", global.score)
+
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "characterOut":
@@ -36,34 +55,10 @@ func validate_player_responses():
 	print(generate_results())
 
 
-func _game_over(_btn_name, _i):
-	if global.user_responses:
-		# Calculate if the last response was correct or not
-		var last_response_incorrect = global.user_responses[global.user_responses.size() - 1]["app"] != global.correct_responses[global.user_responses.size() - 1]["app"]
-
-
-		# Decrease health if the last response was incorrect
-		global.health -= int(last_response_incorrect)
-
-	
-	
-
-
-		# Adjust the score
-		if last_response_incorrect:
-			decrease_score(5)  # Deduct points for incorrect response
-		else:
-			increase_score(10)  # Award points for correct response
-
-		# Print the current score for debugging
-		print("Current Score: ", global.score)
-
-		# Check if the game is over due to health or score
-		if global.health <= 0 or global.score <= 0:
-			print("\n\n\n\ngame_over\n\n")
-			get_tree().change_scene_to_file("res://Scenes/score.tscn")
-			# You can add any additional game-over logic here, like stopping the game or showing a game-over screen.
-	
+func _game_over(timeup):
+	# Trigger game over logic if health is 0 or time is up
+	print("\n\n\n\ngame_over\n\n")
+	get_tree().change_scene_to_file("res://Scenes/score.tscn")
 	
 func generate_results() -> Dictionary:
 	var results : Dictionary = {"rounds" : [], "total_errors" : 0, "total_oks" : 0}

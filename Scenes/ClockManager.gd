@@ -6,7 +6,7 @@ extends Node2D
 
 var time : int = 36  # Initialize the time to 36 (or any value you need)
 var timeIsUp = false
-signal timeUp() 
+signal timeUp(timeup : bool) 
 
 
 # Called when the node enters the scene tree for the first time.
@@ -54,7 +54,7 @@ func _update_minute_hand() -> void:
 			# When the time reaches 0, handle the clock reset or game-over logic
 			_reset_clock()
 		
-		print("Time left:", time)
+		#print("Time left:", time)
 		
 		# Check if it's time to update the hour hand
 		if time % 12 == 0:
@@ -91,7 +91,7 @@ func _reset_clock() -> void:
 		#timeIsUp = true
 		print("Time is up, resetting the clock or triggering end game!")
 		
-		timeUp.emit()
+		timeUp.emit(true)
 		print(global.tickSpeed)
 		#global.tickSpeed = global.tickSpeed / 2
 		self._ready()
