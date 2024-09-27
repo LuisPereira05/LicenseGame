@@ -22,7 +22,12 @@ func _ready() -> void:
 func lost():
 	label.clear()
 	
-	label.add_text("YOU'RE FIRED!")
+	label.add_text("YOU'RE FIRED!\n")
+	label.add_text("Cases: " 
+		+ str(global.daySummary["rounds"].size())
+		+ "\nTotal errors: " + str(global.daySummary["total_errors"])
+		+ "\nTotal ok's: " + str(global.daySummary["total_oks"]))
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

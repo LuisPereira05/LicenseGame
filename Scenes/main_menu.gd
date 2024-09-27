@@ -11,6 +11,9 @@ func _on_play_pressed():
 	interface.hide()
 
 func _ready() -> void:
+	global.correct_responses.clear()
+	global.user_responses.clear()
+	global.health = 3
 	player.play("Title")
 	
 
