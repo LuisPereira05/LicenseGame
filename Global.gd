@@ -7,7 +7,8 @@ var correct_responses : Array[Dictionary] = []
 
 var daySummary : Dictionary
 
-var tickSpeed = 0.1
+var tickSpeed = 1
+
 
 var health : int = 3
 
