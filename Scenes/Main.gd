@@ -8,6 +8,9 @@ extends Node2D
 signal _new_char()
 
 func _ready() -> void:
+	
+	global.daySummary.clear()
+	
 	anim.current_animation = anim.get_animation_list()[1]
 	pass
 
@@ -59,8 +62,9 @@ func _game_over(timeup):
 	# Trigger game over logic if health is 0 or time is up
 	print(global.user_responses)
 	if global.health <= 0 or global.user_responses.is_empty():
-		global.lost == true
-	print("\n\n\n\ngame_over\n\n")
+		global.lost = true
+	print("\n\n\n\ngame_over")
+	print(global.lost)
 	get_tree().change_scene_to_file("res://Scenes/score.tscn")
 	global.daySummary = generate_results()
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://du7205pjw7pcn"]
+[gd_scene load_steps=84 format=3 uid="uid://du7205pjw7pcn"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_ppkm8"]
 [ext_resource type="Texture2D" uid="uid://dluwqvturhf4j" path="res://Assets/MainTitle.png" id="2_37j85"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://vsxuwf0ylkvg" path="res://Audio/BackgroundNoise.wav" id="4_efeve"]
 [ext_resource type="AudioStream" uid="uid://dix3icmtg7rjx" path="res://Audio/MenuDrums.wav" id="5_imnw8"]
 [ext_resource type="AudioStream" uid="uid://ctljprg8rf6he" path="res://Audio/Engine.wav" id="6_sd3oq"]
+[ext_resource type="PackedScene" path="res://Objects/cursor.tscn" id="8_2c3n0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ylaw"]
 atlas = ExtResource("4_dive4")
@@ -641,6 +642,9 @@ text = "Play"
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[node name="Cursor" parent="." instance=ExtResource("8_2c3n0")]
+position = Vector2(489, 485)
 
 [connection signal="animation_finished" from="Fondo" to="." method="_on_fondo_animation_finished"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
