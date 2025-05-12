@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://v3ekwsxt6ja2"]
 
-[ext_resource type="Script" path="res://Objects/screen_button.gd" id="1_6tdwi"]
+[ext_resource type="Script" uid="uid://cghkil77m41ja" path="res://Objects/screen_button.gd" id="1_6tdwi"]
 
 [node name="ButtonZERO" type="AnimatedSprite2D"]
 texture_filter = 1

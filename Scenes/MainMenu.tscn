@@ -1,6 +1,6 @@
 [gd_scene load_steps=84 format=3 uid="uid://du7205pjw7pcn"]
 
-[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_ppkm8"]
+[ext_resource type="Script" uid="uid://dasj0vh4q5534" path="res://Scenes/main_menu.gd" id="1_ppkm8"]
 [ext_resource type="Texture2D" uid="uid://dluwqvturhf4j" path="res://Assets/MainTitle.png" id="2_37j85"]
 [ext_resource type="Texture2D" uid="uid://c1k58my58on3r" path="res://Assets/Intro.png" id="2_xd1c3"]
 [ext_resource type="Texture2D" uid="uid://dj4mc5f5gydh" path="res://Assets/Fila.png" id="4_dive4"]
@@ -565,8 +565,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s73b0"]
 _data = {
-"RESET": SubResource("Animation_04erg"),
-"Title": SubResource("Animation_ey66x")
+&"RESET": SubResource("Animation_04erg"),
+&"Title": SubResource("Animation_ey66x")
 }
 
 [node name="Control" type="Control" node_paths=PackedStringArray("anim", "interface", "player", "engine")]
@@ -603,7 +603,7 @@ volume_db = -10.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../MarginContainer/VBoxContainer/Sprite2D")
 libraries = {
-"": SubResource("AnimationLibrary_s73b0")
+&"": SubResource("AnimationLibrary_s73b0")
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

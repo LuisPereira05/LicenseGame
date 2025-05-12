@@ -2,17 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://m0knuehinsli" path="res://Assets/ForegroundDemo1.png" id="1_hihse"]
 [ext_resource type="PackedScene" uid="uid://bstxgajkpgo0m" path="res://Objects/Character_Obj.tscn" id="1_id553"]
-[ext_resource type="Script" path="res://Scenes/Main.gd" id="1_vy1sf"]
+[ext_resource type="Script" uid="uid://cm8bitkq23fse" path="res://Scenes/Main.gd" id="1_vy1sf"]
 [ext_resource type="AudioStream" uid="uid://vsxuwf0ylkvg" path="res://Audio/BackgroundNoise.wav" id="2_ddidr"]
 [ext_resource type="AudioStream" uid="uid://d3sg4gs0gtpd8" path="res://Audio/LoopIntro.wav" id="3_3apo4"]
 [ext_resource type="Texture2D" uid="uid://dj4mc5f5gydh" path="res://Assets/Fila.png" id="3_6xw7x"]
 [ext_resource type="PackedScene" uid="uid://cyo0o11vv6oyn" path="res://Objects/DraggableObject.tscn" id="3_faqed"]
 [ext_resource type="AudioStream" uid="uid://btc6vre0h1g25" path="res://Audio/Loop.wav" id="4_5v4hy"]
 [ext_resource type="Texture2D" uid="uid://c1k58my58on3r" path="res://Assets/Intro.png" id="4_yxckt"]
-[ext_resource type="Script" path="res://Scenes/ScreenManager.gd" id="5_2bwg0"]
+[ext_resource type="Script" uid="uid://dfyxaik1x0nbm" path="res://Scenes/ScreenManager.gd" id="5_2bwg0"]
 [ext_resource type="Texture2D" uid="uid://bx763m61qm1he" path="res://Assets/ClockBG.png" id="5_4rg7t"]
 [ext_resource type="PackedScene" uid="uid://v3ekwsxt6ja2" path="res://Objects/ScreenButton.tscn" id="5_4w7j8"]
-[ext_resource type="Script" path="res://Scenes/ClockManager.gd" id="5_thxqi"]
+[ext_resource type="Script" uid="uid://cwkv0rf0ntcni" path="res://Scenes/ClockManager.gd" id="5_thxqi"]
 [ext_resource type="Texture2D" uid="uid://cuogqgje7vbeb" path="res://Assets/ClockMIN.png" id="6_g1dtx"]
 [ext_resource type="Texture2D" uid="uid://tog4olmkbv47" path="res://Assets/Buttons/ButtonZERO.png" id="6_tlwy6"]
 [ext_resource type="Texture2D" uid="uid://bj8o5jtjlo5wd" path="res://Assets/ClockHOUR.png" id="7_27n3i"]
@@ -231,9 +231,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2mxyb"]
 _data = {
-"RESET": SubResource("Animation_68hvx"),
-"characterIn": SubResource("Animation_aco1c"),
-"characterOut": SubResource("Animation_r7c1u")
+&"RESET": SubResource("Animation_68hvx"),
+&"characterIn": SubResource("Animation_aco1c"),
+&"characterOut": SubResource("Animation_r7c1u")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2hd8"]
@@ -2278,7 +2278,7 @@ position = Vector2(-455, -74)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasGroup"]
 libraries = {
-"": SubResource("AnimationLibrary_2mxyb")
+&"": SubResource("AnimationLibrary_2mxyb")
 }
 
 [node name="Foreground" type="AnimatedSprite2D" parent="CanvasGroup"]
